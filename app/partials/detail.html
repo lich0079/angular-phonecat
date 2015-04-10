@@ -1,35 +1,29 @@
-<div class="phone-images">
-  <img ng-src="{{img}}"
-       class="phone"
-       ng-repeat="img in phone.images"
-       ng-class="{active:mainImageUrl==img}">
-</div>
-
-<h1>{{phone.name}}</h1>
-
-<p>{{phone.description}}</p>
-
-<ul class="phone-thumbs">
-  <li ng-repeat="img in phone.images">
-    <img ng-src="{{img}}" ng-click="setImage(img)">
-  </li>
-</ul>
-
-<ul class="specs">
-  <li>
-    <span>Availability and Networks</span>
-    <dl>
-      <dt>Availability</dt>
-      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
-    </dl>
-  </li>
-    ...
-  <li>
-    <span>Additional Features</span>
-    <dd>{{phone.additionalFeatures}}</dd>
-  </li>
 
 
-</ul>
+<center>
 
 
+	<ul class="phone-thumbs">
+	  <li ng-repeat="belle in belles">
+	    <img ng-src="{{belle.lsrc}}" ng-click="setBelleImage(belle.lsrc)">
+	  </li>
+	</ul>
+
+<img src="img/previous.png" ng-click="previous()"/>{{pageindex}}     
+<img src="img/next.png" ng-click="next()"/>  
+<input   style="width:50px;text-align:center;" type="text" ng-model="pageindex" >  
+<button class="btn btn-primary" ng-click="gotoPage(pageindex)">Go</button>  
+total: {{parseInt(imgsdata.length/pageSize)}}    {{currentIndex}}
+      <select ng-model="pageSize" ng-change="gotoPage(pageindex)">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+<br><br>
+	<div >
+	  <img ng-src="{{mainBelleUrl}}" >
+	</div>
+
+</center>

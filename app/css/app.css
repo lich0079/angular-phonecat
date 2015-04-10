@@ -55,7 +55,6 @@ ul.phone-thumbs {
 }
 
 ul.phone-thumbs li {
-  border: 1px solid black;
   display: inline-block;
   margin: 1em;
   background-color: white;
@@ -64,7 +63,8 @@ ul.phone-thumbs li {
 ul.phone-thumbs img {
   height: 100px;
   width: 100px;
-  padding: 1em;
+  padding: 0px;
+
 }
 
 ul.phone-thumbs img:hover {
