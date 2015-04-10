@@ -1,6 +1,6 @@
-var phonecatControllers = angular.module('phonecatControllers', []);
+var phonecatApp = angular.module('phonecatApp', []);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope',
+phonecatApp.controller('PhoneListCtrl', ['$scope',
   function($scope) {
 
     $scope.imgsdata = imgsdata;

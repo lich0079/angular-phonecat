@@ -1,0 +1,53 @@
+<html ng-app="phonecatApp">
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers3.js"></script>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="js/data.js"></script>
+
+
+</head>
+<body ng-controller="PhoneListCtrl">
+
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+
+
+<center>
+
+
+	<ul class="phone-thumbs">
+	  <li ng-repeat="belle in belles">
+	    <img ng-src="{{belle.lsrc}}" ng-click="setBelleImage(belle.lsrc)">
+	  </li>
+	</ul>
+
+<img src="img/previous.png" ng-click="previous()"/>{{pageindex}}     
+<img src="img/next.png" ng-click="next()"/>  
+<input   style="width:50px;text-align:center;" type="text" ng-model="pageindex" >  
+<button class="btn btn-primary" ng-click="gotoPage(pageindex)">Go</button>  
+total: {{parseInt(imgsdata.length/pageSize)}}    {{currentIndex}}
+      <select ng-model="pageSize" ng-change="gotoPage(pageindex)">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+<br><br>
+	<div >
+	  <img ng-src="{{mainBelleUrl}}" >
+	</div>
+
+</center>
+
+</body>
+</html>
